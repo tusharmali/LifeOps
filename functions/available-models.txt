@@ -1,0 +1,4 @@
+Fetching available models...
+
+Error: genAI.listModels is not a function
+Full error: {}

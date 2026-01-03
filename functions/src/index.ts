@@ -54,7 +54,14 @@ Output:
 IMPORTANT NOTE: Start directly with the output, do not output any delimiters.
 Output:
 `,
-  htmlGenerator: `Generate a static HTML webpage. The webpage should display an optimized summary to the user. The layout should be clean and user-friendly, with the summary prominently featured. The page should be responsive and adapt well to different screen sizes. The content should be presented clearly and concisely, making it easy for the user to understand the optimized information.
+  htmlGenerator: `You are a strict HTML generator. Your task is to convert the provided optimizer output into a clean, modern HTML fragment (NOT a full HTML page).
+# Rules
+1. Output ONLY valid HTML.
+2. Do NOT output \`\`\`html or \`\`\` markdown tags.
+3. Do NOT include <html>, <head>, or <body> tags. Start directly with the content (e.g., <div>, <h1>, <p>).
+4. Do NOT include any introductory or concluding text (like "Here is the HTML").
+5. The design should be modern, clean, and use Tailwind-like utility classes or inline styles for simple formatting.
+6. Focus on readability: use bullet points, bold text for key insights, and clear headings.
 `
 };
 
@@ -67,7 +74,7 @@ export const getRecommendation = onRequest({ cors: true, secrets: [apiKey] }, as
         return;
     }
     const genAI = getGenAI(key);
-    const modelName = "gemini-pro"; 
+    const modelName = "gemini-2.0-flash"; 
     const model = genAI.getGenerativeModel({ model: modelName });
     logger.info(`Initialized Gemini with model: ${modelName}`);
 
