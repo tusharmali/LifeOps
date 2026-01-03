@@ -1,0 +1,6 @@
+lib/
+node_modules/
+.firebase/
+lib/
+lib/index.js
+lib/index.js.map
