@@ -1,10 +1,10 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-const API_KEY = "AIzaSyCilYVHIHtHZNWiKkYkED1X8ae5MJvpmdg";
+const API_KEY = "";
 
 async function testModels() {
   const genAI = new GoogleGenerativeAI(API_KEY);
-  
+
   const modelsToTest = [
     "gemini-pro",
     "gemini-1.5-pro",
@@ -12,9 +12,9 @@ async function testModels() {
     "models/gemini-pro",
     "models/gemini-1.5-flash"
   ];
-  
+
   console.log("Testing models with your API key...\n");
-  
+
   for (const modelName of modelsToTest) {
     try {
       console.log(`Testing: ${modelName}`);
